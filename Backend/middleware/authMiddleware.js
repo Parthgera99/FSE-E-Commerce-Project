@@ -38,9 +38,13 @@ export const authenticateUser = async (req, res, next) => {
 // ✅ Middleware for Role-Based Authorization
 export const authorizeRoles = (...allowedRoles) => {
   return (req, res, next) => {
-    if (!req.user || !allowedRoles.includes(req.user.role)) {
+    console.log("🔐 Checking role-based access. Allowed roles:", allowedRoles);
+    console.log("👤 User's roleId:", req.user?.roleId);
+
+    if (!req.user || !allowedRoles.includes(req.user.roleId)) {
       return res.status(403).json({ message: 'Forbidden! Insufficient permissions' });
     }
+    
     next();
   };
 };
