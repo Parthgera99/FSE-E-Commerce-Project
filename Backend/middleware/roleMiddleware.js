@@ -92,3 +92,12 @@ export const authenticateUser = async (req, res, next) => {
 //     next();
 //   };
 // };
+
+export const authorizeRoles = (...allowedRoles) => {
+  return (req, res, next) => {
+    if (!req.user?.role || !allowedRoles.includes(req.user.role.name)) {
+      return res.status(403).json({ message: 'Forbidden! Insufficient permissions' });
+    }
+    next();
+  };
+};

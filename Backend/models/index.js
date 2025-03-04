@@ -5,7 +5,7 @@ import {
 } from './database_models.js'; // Import models
 
 // Associations (if any)
-Role.hasMany(User, { foreignKey: 'roleId', as: 'users' });
+//Role.hasMany(User, { foreignKey: 'roleId', as: 'users' });
 
 // Sync models with DB
 (async () => {

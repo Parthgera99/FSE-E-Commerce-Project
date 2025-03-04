@@ -1,13 +1,13 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
-import Category from './category.js';
-import Country from './country.js';
-import Department from './department.js';
-import Designation from './designation.js';
-import Region from './region.js';
-import Role from './role.js';
-import State from './state.js';
-import User from './user.js';
+//import Category from './category.js';
+// import Country from './country.js';
+// import Department from './department.js';
+// import Designation from './designation.js';
+// import Region from './region.js';
+// import Role from './role.js';
+// import State from './state.js';
+// import User from './user.js';
 
 dotenv.config();
 
@@ -32,6 +32,6 @@ const sequelize = new Sequelize(
 })();
 
 export default sequelize;
-const models = { Category, Country, Department, Designation, Region, Role, State, User };
+// const models = {  Country, Department, Designation, Region, Role, State, User };
 
-export { sequelize, Category, Country, Department, Designation, Region, Role, State, User };
+// export { sequelize, Country, Department, Designation, Region, Role, State, User };
